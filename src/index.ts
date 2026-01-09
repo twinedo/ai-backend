@@ -1,7 +1,9 @@
-import { Elysia } from "elysia";
+import { Elysia } from "elysia"
+import { env } from "./lib/env"
+import { healthRoute } from "./routes/health"
 
-const app = new Elysia().get("/", () => "Hello Elysia").listen(3000);
+const app = new Elysia()
+  .use(healthRoute)
+  .listen(env.PORT)
 
-console.log(
-  `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`
-);
+console.log(`✅ ${env.APP_NAME} running at http://localhost:${env.PORT}`)
