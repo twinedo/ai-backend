@@ -6,7 +6,9 @@
     "dev": "bun run --watch src/index.ts"
   },
   "dependencies": {
-    "elysia": "latest"
+    "elysia": "latest",
+    "elysia-rate-limit": "^4.4.2",
+    "elysia-requestid": "^1.0.9"
   },
   "devDependencies": {
     "bun-types": "latest"
