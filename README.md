@@ -12,4 +12,17 @@ To start the development server run:
 bun run dev
 ```
 
-Open http://localhost:3000/ with your browser to see the result.
+Open http://localhost:8080/ with your browser to see the result.
+
+## Test API (curl)
+```bash
+curl -s http://localhost:8080/health
+```
+
+```bash
+curl -s http://localhost:8080/v1/chat \
+  -H 'content-type: application/json' \
+  -H 'x-api-key: dev-key' \
+  -H 'X-Request-ID: test-123' \
+  -d '{"message":"halo"}'
+```
